@@ -41,3 +41,44 @@ function setTime() {
     time = dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit'});
     document.getElementById('date-time').innerHTML = time;
 }
+
+
+// Projects Tab Bar
+// Set default active tab
+document.getElementById('tab1').style.display = "block";
+document.querySelector('.tab-button.active').classList.remove('active');
+document.querySelector('.tab-button').classList.add('active');
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    
+    tablinks = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+    
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+}
+
+// Project Sliders
+//Get all accordian items from DOM
+const items = document.querySelectorAll(".accordian-item");
+//loop through each accordian 
+items.forEach((item)=> {
+    // Add click event to each item
+    item.addEventListener("click", ()=>{
+        // Loop through each item again
+        items.forEach(item => {
+            // Remove active class from all items
+            item.classList.remove("item-active");
+        });
+        
+        // Add active class to clicked item
+        item.classList.add("item-active");
+    });
+});
