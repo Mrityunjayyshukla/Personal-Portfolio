@@ -143,14 +143,9 @@
     margin-bottom: 20px; /* Add margin for spacing */
 }
   
-.tab-button {
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-  
-.tab-button.active {
-    border: 2px solid #fff; /* Add white border for active tab button */
+.tab-button h4 {
+    font-weight: 600;
+    font-size: 18px;
 }
   
 .tab-content {
