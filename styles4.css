@@ -142,11 +142,16 @@
     justify-content: center; /* Center the tab bar horizontally */
     margin-bottom: 20px; /* Add margin for spacing */
 }
-  
+
 .tab-button h4 {
     font-weight: 600;
     font-size: 18px;
 }
+
+.tab-button.active {
+    border-bottom: 2px solid white; /* Change color as desired */
+}
+
   
 .tab-content {
     display: none;
@@ -392,16 +397,8 @@ footer .footer-container {
     text-align: center;
 }
 
-.footer p {
-    margin: 0 auto;
-}
-
 .footer .media-icons {
-    margin: 1.5em 0;
-}
-
-.footer-container p {
-    max-width: 35em; /* Adjust the max-width as needed */
+    margin: 0.5em 0;
 }
 
 .footer .menu {

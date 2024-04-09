@@ -28,6 +28,15 @@ const typeEffect = () => {
 
 typeEffect();
 
+//Time
+setInterval(setTime, 1000);
+setTime();
+function setTime() {
+    var dt = new Date();
+    time = dt.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit', second: '2-digit'});
+    document.getElementById('date-time').innerHTML = time;
+}
+
 //Navigation
 function navigateToYoutube(){
     window.location.href = "https://youtube.com";
@@ -70,6 +79,39 @@ items.forEach((item)=> {
         
         // Add active class to clicked item
         item.classList.add("item-active");
+    });
+});
+
+//Popup card
+document.addEventListener('DOMContentLoaded', function () {
+    const skillItems = document.querySelectorAll('.skills_data');
+
+    skillItems.forEach(function (item) {
+        item.addEventListener('click', function (event) {
+            event.preventDefault();
+            const popupCard = document.getElementById('popup-card');
+            const popupTitle = popupCard.querySelector('.popup__title'); // Updated class name
+            const popupSubtitle = popupCard.querySelector('.skills__subtitle');
+            
+            // Get data from clicked skill item
+            const title = item.querySelector('.skills__name').textContent;
+            const subtitle = item.querySelector('.skills__subtitle').textContent;
+
+            // Set data to popup card
+            popupTitle.textContent = title;
+            popupSubtitle.textContent = subtitle;
+
+            // Show the popup card
+            popupCard.classList.add('popup-active');
+        });
+    });
+
+    // Close popup when clicking outside the content
+    const popupCard = document.getElementById('popup-card');
+    popupCard.addEventListener('click', function (event) {
+        if (event.target === this) {
+            this.classList.remove('popup-active');
+        }
     });
 });
 
