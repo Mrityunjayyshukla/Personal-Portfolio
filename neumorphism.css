@@ -71,5 +71,312 @@ body {
 /* Neumorphism class */
 .neu {
     background: var(--primary);
-    box-shadow: 0.5em ;
+    box-shadow: 0.5em 0.5em 0.8em var(--shadow-dark), -0.5em -0.5em 0.8em var(--shadow-light);
 }
+
+/* Inset Neumorphism class */
+/* These can be applied to elements through html */
+.neu-inset {
+    background: var(--primary);
+    box-shadow: var(--neu-inset);
+}
+
+/* Regular Buttons */
+.btn {
+    background: var(--primary);
+    box-shadow: var(--neu);
+    margin: 1em;
+    border: none;
+    border-radius: 0.5em;
+    color: var(--text);
+    padding: 0.7em 1.5em;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.btn:not(.card-btn):hover {
+    box-shadow: var(--neu-inset);
+}
+
+.btn-round {
+    border-radius: 3em;
+}
+
+/* Circle Buttons */
+.btn-circle {
+    width: 3em;
+    height: 3em;
+    padding: 1em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Profile Card */
+.card {
+    padding: 2em;
+    text-align: center;
+    width: 18em;
+    border-radius: 0.8em;
+}
+
+.profile-img {
+    width: 6em;
+    height: 6em;
+    background: linear-gradient(135deg, var(--shadow-dark), var(--shadow-light));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.profile-img img {
+    width: 5em;
+    height: 5em;
+    border-radius: inherit;
+}
+
+.card-btn {
+    display: block;
+    margin: 2em auto 0 auto;
+    background: var(--accent);
+    width: 100%;
+}
+
+.card h2 {
+    margin: 1em 0 0 0;
+}
+
+/* Player Buttons */
+.player-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.player-buttons .btn {
+    width: 4em;
+    height: 4em;
+    padding: 0.5em;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    min-width: 15em;
+    position: relative;
+    margin: 1em;
+}
+
+.dropdown * {
+    box-sizing: border-box;
+}
+
+.select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px var(--shadow-light) solid;
+    border-radius: 0.5em;
+    padding: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Clicked Styles (added later in JS) */
+.select-clicked {
+    border: 2px var(--accent) solid;
+}
+
+.select:hover {
+    background: var(--shadow-light);
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--text);
+    transition: 0.3s;
+}
+
+/* Rotate Styles (added later in JS) */
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.menu {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: var(--primary);
+    box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
+    border-radius: 0.5em;
+    color: #9fa5b5;
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.menu li {
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    box-shadow: var(--neu-inset);
+}
+
+/* Active styles (added later in JS) */
+.active {
+    background: #23242a;
+}
+
+/* Open Styles (added later in JS) */
+.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+/* Range Slider */
+.range-slider {
+    max-width: 30em;
+    margin: 2em auto;
+    position: relative;
+    display: flex;
+    user-select: none;
+    width: 100%;
+}
+
+.range-slider .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 0.6em;
+    outline: none;
+    border-radius: 3px;
+}
+
+.range-slider .slider::-webkit-slider-thumb {
+    width: 3em;
+    height: 3em;
+    z-index: 3;
+    position: relative;
+}
+
+.range-slider .slider-thumb {
+    position: absolute;
+    width: 1.4em;
+    height: 1.4em;
+    background: var(--text);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0.3em 0.3em 0.5em rgba(0,0,0,0.5);
+}
+
+.range-slider .progress {
+    width: 50%;
+    height: 0.6em;
+    border-radius: 3px;
+    background: var(--accent);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    pointer-events: none;
+}
+
+/* Progress Bars */
+.bars {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5em;
+}
+
+.bars li {
+    border-radius: 3em;
+    position: relative;
+    width: 1.5em;
+}
+
+.bars span {
+    background: var(--accent);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: inherit;
+    width: 100%;
+    height: 0;
+    transition: 0.8s ease-in-out;
+}
+
+/* Checkbox */
+.check {
+    margin: 1em;
+    width: 2em;
+    height: 2em;
+    position: relative;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.check::before {
+    content: "";
+    font-family: "Material Symbols Outlined";
+    font-size: 1.3em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    color: var(--accent);
+    box-shadow: var(--neu-inset);
+    border-radius: 0.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.check:checked:before {
+    content: "done";
+    box-shadow: var(--neu-sm);
+}
+
+/* Search Bar */
+.input-wrap {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search {
+    padding: 0.5em;
+    background: none;
+    color: var(--text);
+    border: none;
+    margin-right: 0.5em;
+}
+
+.search::placeholder {
+    color: var(--text);
+}
+/* 15:51 */
