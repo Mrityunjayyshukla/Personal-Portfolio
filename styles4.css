@@ -309,6 +309,47 @@
     }
 }
 
+.view-project {
+    margin-top: 1em;
+    color: white;
+    background: transparent;
+    padding: 1em 1em;
+    border: 2px solid white;
+    border-radius: 1em;
+    font-weight: 500;
+    transition: ease-in-out;
+}
+
+.view-project:hover {
+    border-radius: 2em;
+    font-weight: bold;
+}
+
+/* View Project Button */
+/* Button style */
+.view-project-button {
+    margin-top: 1em;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff; /* White border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, font-weight 0.3s;
+}
+
+/* Hover effect */
+.view-project-button:hover {
+    background-color: #fff; /* White background on hover */
+    color: black; /* Blue text on hover */
+    font-weight: bold;
+}
+
+/* Hide project details by default */
+.project-details {
+    display: none;
+}
+
 /* footer */
 footer * {
     box-sizing: border-box;

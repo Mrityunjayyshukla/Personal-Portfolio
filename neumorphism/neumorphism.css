@@ -257,7 +257,7 @@ body {
 }
 
 .range-slider .slider {
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     width: 100%;
     height: 0.6em;
     outline: none;
@@ -332,7 +332,7 @@ body {
     width: 2em;
     height: 2em;
     position: relative;
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     cursor: pointer;
 }
 
@@ -378,5 +378,251 @@ body {
 
 .search::placeholder {
     color: var(--text);
+}
+
+.search:focus {
+    outline: none;
+}
+
+.input-wrap span {
+    cursor: pointer;
+    align-self: center;
+}
+
+/* Toggle Switch */
+.toggle {
+    margin: 1em;
+    width: 4em;
+    height: 2em;
+    position: relative;
+    /* -webkit-appearance: none; */
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3em;
+    box-shadow: var(--neu-inset-sm);
+}
+
+.toggle::after {
+    content: '';
+    background: var(--text);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 0.3em;
+    width: 1.8em;
+    height: 1.8em;
+    box-shadow: 0.3em 0.3em 0.5em rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+/* Round Toggle switch */
+.toggle-round::before, .toggle-round::after {
+    border-radius: 3em;
+}
+
+.toggle:checked:before {
+    background: var(--accent);
+}
+
+.toggle:checked:after {
+    left: 2.2em;
+}
+
+/* Radio Buttons */
+.radio {
+    position: relative;
+    /* -webkit-appearance: none; */
+    width: 2em;
+    height: 2em;
+    margin: 1em;
+}
+
+.radio::before, .radio::after {
+    content: '';
+    background: var(--primary);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.radio::before {
+    width: 100%;
+    height: 100%;
+    box-shadow: var(--neu-sm);
+    cursor: pointer;
+}
+
+.radio::after {
+    width: 0.8em;
+    height: 0.8em;
+    box-shadow: var(--neu-inset-sm);
+}
+
+.radio:checked:before {
+    background: var(--accent);
+}
+
+.radio:checked:after {
+    background: var(--text);
+    box-shadow: none;
+}
+
+/* Extra Buttons */
+.buttons-toggles button {
+    border-radius: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+}
+
+/* Large Toggle Switch */
+.toggle-lg {
+    margin: 1em;
+    width: 5em;
+    height: 1.5em;
+    position: relative;
+    /* -webkit-appearance: none; */
+    cursor: pointer;
+}
+
+.toggle-lg::before {
+    content: '';
+    background: var(--primary);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    border-radius: 3em;
+    transform: translate(-50%, -50%);
+    box-shadow: var(--neu-sm);
+    transition: 0.3s;
+}
+
+.toggle-lg::after {
+    content: '';
+    background: var(--text);
+    width: 2.3em;
+    height: 2.3em;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0.3em 0.3em 0.5em rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.toggle-lg:checked:before {
+    background: var(--accent);
+}
+
+.toggle-lg:checked:after {
+    left: 2.8em;
+}
+
+/* Circular Progress Bar */
+.circle {
+    margin: 2em;
+    background: #2d3239;
+    border: 1px #555 solid;
+    border-radius: 50%;
+    position: relative;
+    width: 14.2em;
+    height: 14.2em;
+    color: var(--text);
+    box-shadow: 0 0 1.5em rgba(0,0,0,0.6);
+}
+
+.circle-inner {
+    background: #282c30;
+    border-radius: inherit;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10.5em;
+    height: 10.5em;
+    box-shadow: 0 0 1.5em rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-inner::before {
+    content: '';
+    background: linear-gradient(120deg, #201c21, #2f343a);
+    box-shadow: 0 0.5em 0.5em rgba(0,0,0,0.3);
+    border-radius: inherit;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 9.5em;
+    height: 9.5em;
+    z-index: -1;
+}
+
+.circle h1 {
+    font-size: 2.6em;
+}
+
+.circle svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.track {
+    fill: none;
+}
+
+.circle-progress {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 22;
+    stroke-linecap: round;
+    stroke-dasharray: 630;
+    stroke-dashoffset: 630;
+    transition: 1s ease-in-out;
+}
+
+/* Buttons Groups / Custom Switches */
+.btn-group {
+    border-radius: 3em;
+    padding: 0.2em;
+}
+
+.btn-group button {
+    border: none;
+    background: var(--primary);
+    border-radius: 3em;
+    box-shadow: none;
+    font-size: 0.9em;
+    margin: 0.5em;
+    padding: 1em 2em;
+    color: var(--text);
+    cursor: pointer;
+    box-shadow: var(--neu-inset);
+}
+
+.btn-group .active {
+    box-shadow: none;
+    color: var(--accent);
 }
 /* 15:51 */

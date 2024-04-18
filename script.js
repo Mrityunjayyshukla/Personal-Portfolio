@@ -115,3 +115,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// View Project Button
+// Get all buttons with the class view-project-button
+var buttons = document.querySelectorAll('.view-project-button');
+
+// Add click event listener to each button
+buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        // Get the value of the data-link attribute
+        var link = this.getAttribute('data-link');
+        // Open the link in a new tab or window
+        window.open(link, '_blank');
+    });
+});
+
+
