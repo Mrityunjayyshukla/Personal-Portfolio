@@ -31,19 +31,20 @@
 }
 
 .checkpoint div {
-    padding: 20px;
-    background-color: #111;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px #050505, -5px -5px 15px #1b1b1b;
-    transition: box-shadow 0.3s ease;
+    background: var(--primary);
+    box-shadow: var(--neu);
     margin-left: 10px;
     margin-right: 10px;
+    border: none;
+    border-radius: 0.5em;
+    color: var(--text);
+    padding: 20px;
+    font-size: 0.9em;
+    cursor: pointer;
 }
 
 .checkpoint div:hover {
-    box-shadow: 3px 3px 10px rgba(8, 8, 8, 0.8), -3px -3px 10px rgba(53, 53, 53, 0.8);
+    box-shadow: var(--neu-inset);
 }
 
 .checkpoint p {
@@ -363,7 +364,8 @@ footer ul {
 
 footer {
     color: #fff;
-    background: #121315;
+    background: var(--shadow-dark);
+    border-radius: 2em;
 }
 
 footer p {
@@ -425,7 +427,7 @@ footer .footer-container {
 }
 
 .footer .menu a:hover {
-    color: yellow;
+    color: var(--accent);
 }
 
 .footer {
@@ -445,3 +447,7 @@ footer .footer-container {
 .footer .menu {
     margin-bottom: 0.5em; /* Adjust the margin as needed */
 }
+
+
+/* Contact Page */
+

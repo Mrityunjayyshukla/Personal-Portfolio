@@ -1,3 +1,18 @@
+:root {
+    /* Colors */
+    --primary: #2a2d32;
+    --accent: #25c7d4;
+    --text: #fff;
+    /* Shadow Color */
+    --shadow-light: #373b41;
+    --shadow-dark: #1c1e21;
+    /* Neumorphism Shadows */
+    --neu: 0.5em 0.5em 0.8em var(--shadow-dark), -0.5em -0.5em 0.8em var(--shadow-light);
+    --neu-sm: 0.2em 0.2em 0.5em var(--shadow-dark), -0.2em -0.2em 0.5em var(--shadow-light);
+    --neu-inset: inset 0.2em 0.2em 0.5em var(--shadow-dark), inset -0.2em -0.2em 0.5em var(--shadow-light);
+    --neu-inset-sm: inset 0.15em 0.15em 0.3em var(--shadow-dark), inset -0.15em -0.15em 0.3em var(--shadow-light);
+}
+
 /* Reset */
 html, body, h1, h2, h3, p, ul, li {
     margin: 0;
@@ -7,7 +22,7 @@ html, body, h1, h2, h3, p, ul, li {
 body {
     font-family: 'Helvetica Neue', sans-serif;
     line-height: 1.6;
-    background-color: #111;
+    background-color: var(--primary);
 }
 
 .container {
@@ -20,21 +35,15 @@ body {
 }
 
 header {
-    background-color: #111;
+    background-color: var(--primary);
     box-shadow: none;
     margin-top: 25px;
 }
 
 .header-title {
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--text);
     align-items: center;
-}
-
-header h2 {
-    font-size: 2rem;
-    text-align: center;
-    color: #fff;
 }
 
 header nav ul {
@@ -52,13 +61,13 @@ header nav ul li:last-child {
 
 header nav ul li a {
     text-decoration: none;
-    color: #888;
+    color: var(--text);
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: white;
+    color: var(--accent);
     font-weight: bold;
 }
 
@@ -67,6 +76,7 @@ header nav ul li a:hover {
     font-weight: 600;
     margin-right: 10px;
     margin-left: 10px;
+    
 }
 
 .header-text-onhover:hover {
@@ -109,32 +119,21 @@ section p {
     margin: 0 auto;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    font-size: 1rem;
-}
-
-
-
 .neumorphic-btn-2 {
-    margin-top: 25px;
-    padding: 20px;
-    background-color: #111;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px #050505, -5px -5px 15px #1b1b1b;
-    transition: box-shadow 0.3s ease;
+    margin-top: 20px;
+    background: var(--primary);
+    box-shadow: var(--neu);
     margin-left: 10px;
     margin-right: 10px;
-    display: flex; /* Use flexbox layout */
-    align-items: center; /* Center items vertically */
+    border: none;
+    border-radius: 0.5em;
+    color: var(--text);
+    padding: 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
 }
 
 .neumorphic-btn-2 p {
@@ -143,7 +142,7 @@ footer p {
 }
 
 .neumorphic-btn-2:hover {
-    box-shadow: 3px 3px 10px rgba(8, 8, 8, 0.8), -3px -3px 10px rgba(53, 53, 53, 0.8);
+    box-shadow: var(--neu-inset);
 }
 
 

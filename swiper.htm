@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coverflow Carousel</title>
+<style>
+    /* Container for the carousel */
+    .carousel-container {
+        perspective: 1000px; /* Set the depth of the 3D space */
+        width: 100%;
+        height: 400px; /* Adjust height as needed */
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Individual carousel items */
+    .carousel-item {
+        width: 300px; /* Width of each item */
+        height: 300px; /* Height of each item */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+    }
+
+    /* Images within carousel items */
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    /* Styling for the "prev" and "next" buttons */
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    /* Adjust z-index of items for correct stacking */
+    .carousel-item:nth-child(2) {
+        z-index: 100;
+    }
+
+    .carousel-item:nth-child(3) {
+        z-index: 200;
+    }
+
+    .carousel-item:nth-child(4) {
+        z-index: 300;
+    }
+
+    /* Adjust rotation and position of items */
+    .carousel-item:nth-child(1) {
+        transform: translate(-50%, -50%) rotateY(60deg) scale(0.8);
+    }
+
+    .carousel-item:nth-child(5) {
+        transform: translate(-50%, -50%) rotateY(-60deg) scale(0.8);
+    }
+</style>
+</head>
+<body>
+
+<section class="carousel-container">
+    <div class="carousel-item">
+        <img src="images/clock-background.jpg" alt="Image 1">
+    </div>
+    <div class="carousel-item">
+        <img src="images/clock-background-cutout.png" alt="Image 2">
+    </div>
+    <div class="carousel-item">
+        <img src="Profile_Photo.jpg" alt="Image 3">
+    </div>
+    <div class="carousel-item">
+        <img src="images/clock-background.jpg" alt="Image 4">
+    </div>
+    <div class="carousel-item">
+        <img src="images/clock-background.jpg" alt="Image 5">
+    </div>
+</section>
+
+<button class="prev" onclick="prevSlide()">❮</button>
+<button class="next" onclick="nextSlide()">❯</button>
+
+<script>
+    let currentIndex = 0;
+    const totalSlides = document.querySelectorAll('.carousel-item').length;
+
+    function rotateCarousel() {
+        const angle = currentIndex * -60; // Each item is rotated by 60 degrees
+        document.querySelector('.carousel-container').style.transform = `rotateY(${angle}deg)`;
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        rotateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        rotateCarousel();
+    }
+</script>
+
+</body>
+</html>

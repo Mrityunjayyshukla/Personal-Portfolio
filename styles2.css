@@ -17,15 +17,15 @@ body {
 
 .center-text {
     text-align: center;
-    color: white;
+    color: var(--text);
     font-size: 40px;
     display: inline-block;
 }
 
 .hello-world {
     font-size: 24px;
-    color: white;
-    opacity: 50%;
+    color: #888;
+    font-weight: 600;
 }
 
 .intro-text h3 {
@@ -36,7 +36,7 @@ body {
 
 .intro-text h3 span {
     position: relative;
-    color: yellow;
+    color: var(--accent);
 }
 
 .intro-text h3 span::before {
@@ -46,7 +46,7 @@ body {
     position: absolute;
     height: 30px;
     width: 2px;
-    background-color: yellow;
+    background-color: var(--text);
     transform: translateY(-45%);
     animation: blink 0.7s infinite;
 }
@@ -60,16 +60,16 @@ body {
 .intro-description {
     font-size: 20px;
     width: 600px;
-    color: white;
-    opacity: 50%;
+    color: #888;
     margin-bottom: 50px;
+    font-weight: 500;
 }
 
 .box {
     position: relative;
     width: 400px;
     height: 400px;
-    background: rgba(0,0,0,0.5);
+    background: #222;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -100,7 +100,7 @@ body {
     content: '';
     position: absolute;
     inset: 6px;
-    background: #111;
+    background: var(--primary);
     border-radius: 50%;
     z-index: 1;
 }
@@ -108,7 +108,7 @@ body {
 .content-image {
     position: absolute;
     inset: 30px;
-    border: 6px solid white;
+    border: 6px solid beige;
     z-index: 3;
     border-radius: 50%;
     overflow: hidden;
@@ -157,21 +157,24 @@ body {
 .connect-with-me {
     font-size: 24px;
     color: rgb(172, 172, 172);
+    font-weight: 700;
     margin-bottom: 25px;
 }
 
-.neumorphic-btn {
-    padding: 20px;
-    background-color: #111;
-    color: #fff;
+/* Regular Buttons */
+.btn {
+    background: var(--primary);
+    box-shadow: var(--neu);
+    margin: 1em;
     border: none;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px #050505, -5px -5px 15px #1b1b1b;
-    transition: box-shadow 0.3s ease;
-    margin-left: 10px;
-    margin-right: 10px;
+    border-radius: 0.5em;
+    color: var(--text);
+    padding: 1.5em 1.5em;
+    font-size: 0.9em;
+    cursor: pointer;
 }
 
-.neumorphic-btn:hover {
-    box-shadow: 3px 3px 10px rgba(8, 8, 8, 0.8), -3px -3px 10px rgba(53, 53, 53, 0.8);
+.btn:not(.card-btn):hover {
+    box-shadow: var(--neu-inset);
 }
+

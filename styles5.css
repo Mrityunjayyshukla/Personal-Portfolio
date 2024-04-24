@@ -1,0 +1,58 @@
+.contact-section form {
+    background-color: #2a2d32;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px #1e2125, -10px -10px 20px #36393e;
+    text-align: center;
+    max-width: 50%; /* Increase the max-width */
+    margin: 0 auto; /* Center the section horizontally */
+}
+
+.education-title {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.input-entry {
+    margin-bottom: 20px;
+}
+
+.input-entry input[type="text"],
+.input-entry textarea {
+    width: calc(100% - 40px); 
+    padding: 15px; 
+    border: none;
+    background: #2a2d32;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: inset 6px 6px 12px #1e2125, inset -6px -6px 12px #36393e;
+    font-size: 16px; 
+}
+
+.input-entry input[type="text"]::placeholder,
+.input-entry textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5); 
+    font-size: 16px; 
+}
+
+.input-entry textarea {
+    height: 180px; /* Increase the height */
+}
+
+.send-button {
+    margin-top: 25px;
+    padding: 15px 20px; 
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #1e2125, #36393e);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: var(--neu);
+    font-size: 16px; 
+    width: 40%;
+    transition: box-shadow 0.3s ease;
+}
+
+.send-button:hover {
+    box-shadow: var(--neu-inset);
+}
